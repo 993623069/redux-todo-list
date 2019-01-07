@@ -22,6 +22,8 @@ const mapDispatchToProps=(dispatch,ownProps){
 		}
 	}
 }
+//那这样我们就写好了逻辑组件，这个逻辑组件，分别把state和dispatch分别转换成了props
+//然后作用在这个显示组件上
 const FilterLink = connect(
 	  mapStateToProps,
 	  mapDispatchToProps)(Link)

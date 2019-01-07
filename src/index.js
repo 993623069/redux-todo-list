@@ -1,11 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App';
+import { Provider } from "react-redux";
+import { creactStore } from "redux";
+import todoApp from "./reducers";
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-
+let store =creactStore(todoApp);
+//最后要在它的入口文件上对它进行一个包装
+//这个createStore是redux提供给我们的
+//它把所有的reducer通过响应，来推断出我们的store来是个什么样子
+//然后通过Provider这样一个算是组件的包装器
+//把写好的顶层组件包装起来
+//最后使用react的render方法把它渲染在节点上
+//
 ReactDOM.render(
-	<App />, 
-	document.getElementById('root'));
+	<Provider store={store}>
+	  <App />, 
+	  document.getElementById('root'));
+    </Provider>
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
