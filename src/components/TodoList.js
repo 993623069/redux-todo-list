@@ -1,6 +1,7 @@
 //根据组件化根据todolist要显示这个列表
 //需要写个todo组件，可以把它写在另外一个位置,先实现这个todolist
 //这个组件只关乎布局和样式，这些和逻辑无关的东西
+import React from 'react';
 import Todo from "./Todo";
 const TodoList = ({ todos , onTodoClick})=>{
 	            //这里面这个todos就是store里面的todos
@@ -11,9 +12,11 @@ const TodoList = ({ todos , onTodoClick})=>{
 	            //text等于text
 	            //onClick就是调用传进来的onTodoClick的方法
 	            //
-	<ul>
-		{todos.map(todo=>{
-			<Todo key={todo.id} 
+	return (
+		<ul>
+		{
+			todos.map(todo=>{
+			  return  <Todo key={todo.id} 
 			      {...todo} 
 			      onClick={()=>onTodoClick(todo.id)}/>
 			      //到这里大家可能还是不太清楚，但是已经看到已经很眼熟的东西啦，
@@ -21,6 +24,8 @@ const TodoList = ({ todos , onTodoClick})=>{
 			      //它只关乎到显示和布局，而我们这里没有任何样式和布局，来看下它传入的todos
 			      //和onTodoClick是哪来的，显然它就是props的todos,和onTodoClick,
 
-		})}
-	</ul>
+		 })
+		}
+	</ul>)
 }
+export default  TodoList;

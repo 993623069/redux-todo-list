@@ -21,14 +21,16 @@ const mapStateToProps=(state)=>{ //这里我们写了一个它的state怎么转�
 }
 //在这里编写dispatch怎么影响属性props，
 const mapDispatchToProps=(dispatch)=>{
-    onTodoClick:(id)={
-    	dispatch(toggleTodo(id))  //看完这个大部分同学就已经晕了
-    	                          //dispatch是一个传入分发器
-    	                          //dispatch可以用户的行为直接进行一个分发
-    	                          //分发之后，分发到定义好的action上面
-    	                          //toggleTodo就是定义号的action
-    	                          //这个action要传入一个ID
+   return{
+       onTodoClick:(id)=>{
+      dispatch(toggleTodo(id))  //看完这个大部分同学就已经晕了
+                                //dispatch是一个传入分发器
+                                //dispatch可以用户的行为直接进行一个分发
+                                //分发之后，分发到定义好的action上面
+                                //toggleTodo就是定义号的action
+                                //这个action要传入一个ID
     }
+   } 
 }
 const VisibleTodoList=connect(
        //这里就不能空着了 需要传入两类参数
@@ -45,7 +47,7 @@ const VisibleTodoList=connect(
        //以上连个方法被connect组合之后被传入到todolist中，传入到这样一个组件里面去。
        //就可以在TodoList中来用传进来的东西
 	)(TodoList)
-
+export default VisibleTodoList;
 
 //写道这里大家看到我把显示组件和逻辑组件进行了分离
 //那么大家可能会想，那么上层能不能放个显示组件，我在显示组件里面套嵌一个逻辑组件

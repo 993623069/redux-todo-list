@@ -2,10 +2,10 @@
 //并不是我们完全手写出来的，一般来说AddTodo使用connect这样一个方法
 //生成然后再使用export导出去，这样就可以再其它文件中进行调用
 
-
+import React from 'react';
 import { connect } from "react-redux";
-import { appTodo } from "../actions";
-let AppTodo=({dispatch})=>{
+import { addTodo } from "../actions";
+let AddTodo=({dispatch})=>{
 	//这个return对象就是react常规开发render的方法
 	//在这里面去写jsx,告诉要render一个什么样的东西
 	//我们首先看下这个container的一个基本结构
@@ -28,7 +28,7 @@ let AppTodo=({dispatch})=>{
           	 		                           //否则就是dispatch
           	 		                           //使用dispaatch调用用户点击提交响应的action
           	 		                           //import AddTod action
-          	 	dispatch(appTodo(input.value)); //它就是把dispatch和显示混和在了一起
+          	 	dispatch(AddTodo(input.value)); //它就是把dispatch和显示混和在了一起
           	 	                                //它是一个container我们把它放在了container里面
           	 	                                //但是没有抽取任何和逻辑无关的component
           	 	                                //这种做法对于很简单的react没有什么问题
@@ -42,6 +42,6 @@ let AppTodo=({dispatch})=>{
           </div>
 		)
 }
-AppTodo=connect()(AppTodo);
+AddTodo=connect()(AddTodo);
 
-export default AppTodo;
+export default AddTodo;

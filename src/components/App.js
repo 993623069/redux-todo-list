@@ -4,6 +4,7 @@
 //AddTodo          对应了todolist的头部部分
 //VisibleTodoList  对应了tdolist的列表部分
 //Footer           对应了filter部分
+import React from 'react';
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
 import Footer from "./Footer"; 
@@ -22,3 +23,5 @@ const App=()=>(
       	<Footer/>
       </div>
 	)
+
+export default  App;

@@ -15,10 +15,10 @@ const mapStateToProps=(state,ownProps)=>{
 		active:ownProps.filter === state.visibilityFilter
 	}
 }
-const mapDispatchToProps=(dispatch,ownProps){
+const mapDispatchToProps=(dispatch,ownProps)=>{
 	return{
 		onClick:()=>{
-			dispatch(setVisibility(ownProps,filter))
+			dispatch(setVisibility(ownProps.filter))
 		}
 	}
 }
@@ -27,3 +27,4 @@ const mapDispatchToProps=(dispatch,ownProps){
 const FilterLink = connect(
 	  mapStateToProps,
 	  mapDispatchToProps)(Link)
+export default FilterLink;

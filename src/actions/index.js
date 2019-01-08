@@ -16,7 +16,7 @@
 **/
 let nextTodoId=0;
 //用户输入代办项，点击addTodo添加代办项g
- export const addTodo=(text)=>{
+ export  const addTodo=(text)=>{
  	return{
  		type:"ADD_TODO",
  		id:nextTodoId,   //代办项的id用来表示代办项的唯一性 nextTodoId是代办项的初始化id为0
