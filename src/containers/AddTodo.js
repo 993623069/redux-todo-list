@@ -21,14 +21,14 @@ let AddTodo=({dispatch})=>{
 	let input;//绑定ref可以直接通过变量拿到value
 	return(
           <div>
-          	 <from onSubmit={e=>{
+          	 <form onSubmit={e=>{
           	 	e.preventDefault();//阻止默认提交
           	 	if(!input.value.trim()){return}//这里检查下，没有输入没有意义的东西
           	 		                           //就return回去，不做相关的处理
           	 		                           //否则就是dispatch
           	 		                           //使用dispaatch调用用户点击提交响应的action
           	 		                           //import AddTod action
-          	 	dispatch(AddTodo(input.value)); //它就是把dispatch和显示混和在了一起
+          	 	dispatch(addTodo(input.value)); //它就是把dispatch和显示混和在了一起
           	 	                                //它是一个container我们把它放在了container里面
           	 	                                //但是没有抽取任何和逻辑无关的component
           	 	                                //这种做法对于很简单的react没有什么问题
@@ -38,7 +38,7 @@ let AddTodo=({dispatch})=>{
           	 }}>
           	 	<input ref={node => {input=node}}/>
           	 	<button type="submit" >Add Todo</button>
-          	 </from>
+          	 </form>
           </div>
 		)
 }

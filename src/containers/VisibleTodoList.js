@@ -3,20 +3,21 @@ import { connect } from "react-redux";
 import { toggleTodo } from "../actions";
 import TodoList from "../components/TodoList";
 const getVisibleTodos=(todos,filter)=>{
+
 	switch(filter){
 		case "SHOW_ALL":
 		     return todos;
 		case "SHOW_COMPLETED":
 		     return todos.filter(t=>t.completed)
-		case "SHOW_ACTION":
+		case "SHOW_ACTIVE":
 		     return todos.filter(t => !t.completed)
 	}//
 }
 const mapStateToProps=(state)=>{ //这里我们写了一个它的state怎么转换props的
-	return{      //它传入一个state,经过getVisibleTodos在进行一个处理
-		         //然后这个方法会传入一个todos和一个visibilityFilter
-		         //然后返回todos作为当前组件的props
-		todos:getVisibleTodos(state.todos,state.visibilityFilter)
+	return{                        //它传入一个state,经过getVisibleTodos在进行一个处理
+		                           //然后这个方法会传入一个todos和一个visibilityFilter
+		                           //然后返回todos作为当前组件的props
+		todos:getVisibleTodos(state.todos,state.visibeilityFilter)
 	}
 }
 //在这里编写dispatch怎么影响属性props，

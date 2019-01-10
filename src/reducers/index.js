@@ -8,10 +8,10 @@
 //然后在把它在export出去
 //这样就写完了整个系统对用户的响应
 import todos from "./todos";
-import visibeilityFilter from "./visibeilityFilter";
-import { combinereducers } from "redux";
+import visibeilityFilter from "./visibilityFilter";
+import { combineReducers } from "redux";
 
-const todoApp=combinereducers({
+const todoApp=combineReducers({
 	todos,
 	visibeilityFilter
 })

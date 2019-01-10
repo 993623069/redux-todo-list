@@ -2,6 +2,7 @@
 //需要写个todo组件，可以把它写在另外一个位置,先实现这个todolist
 //这个组件只关乎布局和样式，这些和逻辑无关的东西
 import React from 'react';
+
 import Todo from "./Todo";
 const TodoList = ({ todos , onTodoClick})=>{
 	            //这里面这个todos就是store里面的todos
@@ -15,6 +16,7 @@ const TodoList = ({ todos , onTodoClick})=>{
 	return (
 		<ul>
 		{
+
 			todos.map(todo=>{
 			  return  <Todo key={todo.id} 
 			      {...todo} 
@@ -28,4 +30,5 @@ const TodoList = ({ todos , onTodoClick})=>{
 		}
 	</ul>)
 }
+
 export default  TodoList;

@@ -19,7 +19,7 @@ let nextTodoId=0;
  export  const addTodo=(text)=>{
  	return{
  		type:"ADD_TODO",
- 		id:nextTodoId,   //代办项的id用来表示代办项的唯一性 nextTodoId是代办项的初始化id为0
+ 		id:++nextTodoId,   //代办项的id用来表示代办项的唯一性 nextTodoId是代办项的初始化id为0
  		text             //代办项的描述内容
  	}
  }
@@ -37,3 +37,9 @@ let nextTodoId=0;
  		id
  	}
  }
+ 
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
+}

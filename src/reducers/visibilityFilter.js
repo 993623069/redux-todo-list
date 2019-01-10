@@ -2,12 +2,13 @@
 //在处理完了代办项，以及代办项列表，那么下面这个筛选器也是要响应的。
 //这里里面来放筛选器的一个响应，
 //我们能看出来它跟代办项和代办项列表是非常相似的，以及格式都是一致的
-const visibeilityFilter=(state="SHOW_ALL",action)=>{//这里有一个小技巧，使用es6给它一个初始值
-	                                                //这样当打开页面的时候，它就是首先显示已有
-	                                                //的代办项列表，同时filter筛选项有一个默认的active
+import { VisibilityFilters } from '../actions'
+const visibeilityFilter=(state=VisibilityFilters.SHOW_ALL,action)=>{//这里有一个小技巧，使用es6给它一个初始值
+	                                //这样当打开页面的时候，它就是首先显示已有
+	  debugger                                  //的代办项列表，同时filter筛选项有一个默认的active
     switch(action.type){
-    	case "SET_VISIBILITY_FILTER":
-    	    return action.visibeilityFilter;  //这里我们看的出来，它return的不是一个对象而是一个字符串了
+    	case "SET_VISIBILITY":
+    	    return action.filter;  //这里我们看的出来，它return的不是一个对象而是一个字符串了
     	default:
     	    return state;        //那么我们现在看下状态树的一个情况，其实这个状态树
     	                         //是我们开发一个系统之前就是考虑号的，
