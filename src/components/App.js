@@ -8,6 +8,8 @@ import React from 'react';
 import AddTodo from "../containers/AddTodo";
 import VisibleTodoList from "../containers/VisibleTodoList";
 import Footer from "./Footer"; 
+import AddTodoTwo from "./AddTodoTwo"
+import InputAddList from "./inputAddList"
 //写完大家看上去可能不太一样，分布在不同的层级，
 //这就是我们之前提到的组件分为两种 一种是container 一种是coomponents
 //container 是用来决定怎么工作的，是直接和数据流相关的，或者说是来表现逻辑的
@@ -21,6 +23,7 @@ const App=()=>(
       	<AddTodo/>              
       	<VisibleTodoList/>
       	<Footer/>
+      	<InputAddList/>
       </div>
 	)
 

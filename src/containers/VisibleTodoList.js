@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { toggleTodo } from "../actions";
 import TodoList from "../components/TodoList";
 const getVisibleTodos=(todos,filter)=>{
-
+     console.log(todos)
 	switch(filter){
 		case "SHOW_ALL":
 		     return todos;
@@ -14,9 +14,11 @@ const getVisibleTodos=(todos,filter)=>{
 	}//
 }
 const mapStateToProps=(state)=>{ //这里我们写了一个它的state怎么转换props的
-	return{                        //它传入一个state,经过getVisibleTodos在进行一个处理
+	console.log(state)
+  return{                        //它传入一个state,经过getVisibleTodos在进行一个处理
 		                           //然后这个方法会传入一个todos和一个visibilityFilter
 		                           //然后返回todos作为当前组件的props
+
 		todos:getVisibleTodos(state.todos,state.visibeilityFilter)
 	}
 }

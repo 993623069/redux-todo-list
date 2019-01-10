@@ -5,7 +5,7 @@
 import { VisibilityFilters } from '../actions'
 const visibeilityFilter=(state=VisibilityFilters.SHOW_ALL,action)=>{//这里有一个小技巧，使用es6给它一个初始值
 	                                //这样当打开页面的时候，它就是首先显示已有
-	  debugger                                  //的代办项列表，同时filter筛选项有一个默认的active
+                                  //的代办项列表，同时filter筛选项有一个默认的active
     switch(action.type){
     	case "SET_VISIBILITY":
     	    return action.filter;  //这里我们看的出来，它return的不是一个对象而是一个字符串了

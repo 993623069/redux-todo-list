@@ -13,6 +13,14 @@ let store =createStore(todoApp,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__R
 //把写好的顶层组件包装起来
 //最后使用react的render方法把它渲染在节点上
 //
+console.log(store.getState())
+console.log(store.dispatch({
+ 		type:"ADD_TODO",
+ 		id:0,   
+ 		text:"text"            
+ 	}))
+console.log(store.getState())
+console.log(store.getState())
 ReactDOM.render(
 	<Provider store={store}>
 	  <App/>, 
